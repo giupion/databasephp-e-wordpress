@@ -69,17 +69,16 @@ $calendariolotte=array(
 );
 
 
-foreach ($calendariolotte as $allenatore) {
+foreach ($calendariolotte as $allenatori) {
     // Itera attraverso l'array interno di ogni allenatore
-    foreach ($allenatore as $nomeAllenatore => $infoAllenatore) {
-        echo "<h2>$nomeAllenatore</h2>";
-        
-        // Stampa i Pokémon
-        echo "<p>Pokémon: " . implode(', ', $infoAllenatore['pokemon']) . "</p>";
-        
-        // Stampa gli scontri
-        echo "<p>Scontri: " . implode(', ', $infoAllenatore['scontri']) . "</p>";
-    }
+   foreach($allenatori as $allenatore=>$specificheallenatore){
+
+    echo "<h1>". $allenatore . "</h1>";
+
+    echo "<p> Pokemon: ". implode(', ',$specificheallenatore['pokemon'] ). "<p/>"; //implode per convertire array in strighe
+
+    echo "<p> Scontri: ". implode(', ',$specificheallenatore['scontri']). "</p>";
+   }
 }
 $trainers = array_keys($calendariolotte); 
 
