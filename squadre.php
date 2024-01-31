@@ -33,15 +33,66 @@ $allenatori = array_keys($squadrepokemon);
     echo "<h1>".($allenatore) ."</h1>"; //qua stampo ogni allenatore
   
     //il singolo allenatore
-for($j=0;$j<count($pokemon);$j++){
-    echo "<li>". ($pokemon[$j]) ."</li>";
+for($j=0;$j<count($pokemon);$j++){ //itero come lunghezza prendo quella del singolo array dei pokemon dell'allenatore
+    echo "<li>". ($pokemon[$j]) ."</li>"; //stampo ogni pokemon dell'array con indice j
 }
    
     
   }
-  print_r( $squadrepokemon['ash'][1]) //puoi accedere a associativo solo cosi
+  print_r( $squadrepokemon['ash'][1]); //puoi accedere a associativo solo cosi
 
-  
+  $squadre = 
+  array( array('Magmortar','Magcargo','Ninetales','Arcanine','Rapidash','Moltres',),
+  array('Lapras','Articuno','Glalie','Froslass','Mamoswine','Abomasnow',),
+  array('Alakazam','Gengar','Machamp','Jolteon','Rayquaza','Spiritomb',),
+array('Arceus','Dragonite','Gallade','Gardevoir','Umbreon','Flygon',));
+
+//parte da 1 quindi 0<1? si quidni vado giu verificata 0<1 si e stampo e incremento,1<
+//$squadre righe e colonne  //$squadre[$i] sono le righe con il loro indice
+for($i=0;$i<count($squadre);$i++) // con squdre 0 ho accesso al primo array alla riga, j<0? no e stampo
+{for($j=0;$j<count($squadre[$i]);$j++) //questo rappresenta la colonnadi ciscun arrai e si tiene conto della lunghezza dell'elemento iesimo per iterare fino alla fine
+{  echo "<p>" . $squadre[$i][$j] . "</p>";}} //per esempio [1][1] srampo seconda riga seconda colonna cioe articuno
+
+$calendariolotte=array(
+    array('ash'=>array(
+        'pokemon'=>array ('charizard','pikachu','pidgeot','lapras','greninja','serperior'),
+'scontri'=> array ('misty','brock','lance')),
+
+    'misty'=>array('pokemon'=>array('staryu','goldeen','gyarados','starmie','togetic','seaking'),
+    'scontri'=> array ('ash','brock','lance')),
+
+    'brock'=> array('pokemon'=>array('bonsly','onix','golem','kabutops','sudowoodo','omastar'),
+    'scontri'=> array ('misty','ash','lance')
+),
+'lance'=>array('pokemon'=>array('dragonite','dragonite','dragonite','gyarados','aerodactyl','charizard'),
+'scontri'=>array('ash','misty','brock')))
+);
+
+
+foreach ($calendariolotte as $allenatore) {
+    // Itera attraverso l'array interno di ogni allenatore
+    foreach ($allenatore as $nomeAllenatore => $infoAllenatore) {
+        echo "<h2>$nomeAllenatore</h2>";
+        
+        // Stampa i Pokémon
+        echo "<p>Pokémon: " . implode(', ', $infoAllenatore['pokemon']) . "</p>";
+        
+        // Stampa gli scontri
+        echo "<p>Scontri: " . implode(', ', $infoAllenatore['scontri']) . "</p>";
+    }
+}
+$trainers = array_keys($calendariolotte); 
+
+
+for($i=0;$i<count($trainers);$i++)
+{$pokemon=array_keys($trainers);
+    for ($j=0;$j<count($pokemon);$j++)
+{}}
+
+//ora stampo tutto
+
+
+
 ?> 
 
 
